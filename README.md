@@ -45,13 +45,7 @@
 
 המשחק מסתיים בתור שבו אחד השחקנים הגיע ל-10 או יותר נקודות ניצחון. כדי לנצח במשחק, השחקן צריך שיגיע תורו ובאותו התור יהיו לו 10 נקודות לכל הפחות.
 
-## מימוש המשחק
-
-במטלה זו מימשנו גרסה פשוטה יותר של קטאן. אתם תיבחנו גם על יצירתיות בבניית הלוח ובמימוש החוקים.
-
-**חובה** לצרף בדיקות יחידה למטלה זו. כמו כן, יש להוסיף קובץ Makefile כאשר הפקודה `make catan` מריצה את התוכנית הראשית שלכם (המדגימה סיבוב אחד במשחק). עליכם להגיש קובץ `README` המסביר את המימוש שלכם, ההיררכיה של המחלקות ובאילו ספריות השתמשתם. יש גם לתאר את כל השיטות שכתבתם ולכתוב תוכנית `main` המריצה סיבוב תקין של המשחק.
-
-### Example
+### דוגמת הרצה
 
 מחלקת ה-Board אחראית לניהול הלוח של המשחק. היא כוללת את כל החלקות, הצמתים והדרכים. המחלקה משתמשת בתבנית סינגלטון על מנת להבטיח שיש רק לוח אחד בכל פעם.
 
@@ -80,14 +74,14 @@ int main() {
     Board* board = Board::getBoardInstance();
 
     // Place settlements and roads for each player
-    board->placeSettlement(0, 0, &player1, false, true);
-    board->placeRoad(0, 0, 0, 1, &player1, true);
+    board->placeSettlement(0, 2, &player1, false, true);
+    board->placeRoad(0, 2, 0, 3, &player1, true);
 
-    board->placeSettlement(1, 1, &player2, false, true);
-    board->placeRoad(1, 1, 1, 2, &player2, true);
+    board->placeSettlement(0, 4, &player2, false, true);
+    board->placeRoad(0, 4, 0, 5, &player2, true);
 
-    board->placeSettlement(2, 2, &player3, false, true);
-    board->placeRoad(2, 2, 2, 3, &player3, true);
+    board->placeSettlement(0, 6, &player3, false, true);
+    board->placeRoad(0, 6, 0, 7, &player3, true);
 
     // Simulate a turn
     player1.rollDice();
